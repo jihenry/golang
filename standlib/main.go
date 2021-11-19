@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 const mail = `
 Pemain yang terhormat,
@@ -13,6 +16,15 @@ Jika Anda memiliki pertanyaan, silakan hubungi CS kami yang berdedikasi melalui 
 
 Saya berharap Anda beruntung dalam permainan!
 `
-func main() {
+
+func multiLine() {
 	fmt.Printf("%v\n", mail)
+}
+func parseTime() {
+	t, err := time.ParseInLocation("2006-01-02 03:04:05", "2021-10-29 00:00:00", time.Local)
+	fmt.Printf("t:%s, err:%s", t, err)
+}
+func main() {
+	// multiLine()
+	parseTime()
 }
